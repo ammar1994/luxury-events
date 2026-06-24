@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لتنظيم المناسبات الفاخرة</title>
-    <!-- مكتبة الأيقونات الرسمية والخط العربي الأنيق -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap">
     
     <style>
-        /* إعدادات وتصفير الـ CSS لسرعة التجاوب */
         * {
             margin: 0;
             padding: 0;
@@ -18,42 +16,42 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* خلفية ناعمة وراقية مريحة للعين وتناسب طابع الأفراح والمناسبات */
+        /* خلفية داكنة مع إضاءة ذهبية علوية خافتة */
         body {
-            background: linear-gradient(135deg, #fbf8f5 0%, #f3ece6 100%);
+            background-color: #0d0d0d;
+            background-image: radial-gradient(circle at 50% -20%, #3d2e14 0%, #0d0d0d 60%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
-            overflow-x: hidden;
+            color: #ffffff;
         }
 
         .wrapper {
             width: 100%;
             max-width: 420px;
             text-align: center;
-            padding: 20px 15px;
         }
 
-        /* حركات الظهور والتلاشي الفاخرة */
+        /* حاوية زجاجية فخمة (Glassmorphism) */
         .profile-card {
-            background: rgba(255, 255, 255, 0.75);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            padding: 30px 20px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 15px 35px rgba(142, 122, 106, 0.1);
-            animation: mainFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(25, 25, 25, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 40px 25px;
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(212, 175, 55, 0.05);
+            animation: fadeIn 1s ease-out;
         }
 
-        /* لوغو دائري بتأثير نبضي ناعم */
+        /* الصورة بحواف ذهبية متوهجة */
         .avatar-container {
             position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 20px;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
         }
 
         .avatar-container img {
@@ -61,114 +59,91 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #fff;
-            box-shadow: 0 8px 20px rgba(142, 122, 106, 0.15);
-        }
-
-        /* نبضة جمالية خلف الشعار */
-        .avatar-container::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            border-radius: 50%;
             border: 2px solid #d4af37;
-            animation: pulseEffect 2s infinite;
-            z-index: -1;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
         }
 
+        /* نصوص أنيقة */
         .profile-card h1 {
-            font-size: 22px;
-            color: #4a3e3d;
+            font-size: 24px;
+            color: #d4af37; /* لون ذهبي */
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         .profile-card p {
             font-size: 14px;
-            color: #8a7a72;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            font-weight: 400;
+            color: #b3b3b3;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-weight: 300;
         }
 
-        /* أزرار مرنة وتأثيرات تفاعلية حركية ممتازة للموبايل */
+        /* الأزرار بتأثير نيون ذهبي خفيف */
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 16px;
         }
 
         .btn-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 24px;
+            padding: 16px 20px;
             text-decoration: none;
-            color: #fff;
+            color: #ffffff;
             font-size: 16px;
-            font-weight: 600;
-            border-radius: 18px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
             opacity: 0;
-            animation: btnSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideUp 0.6s ease forwards;
         }
 
-        /* توزيع أوقات الحركة لظهور الأزرار واحداً تلو الآخر */
-        .btn-link:nth-child(1) { animation-delay: 0.3s; }
-        .btn-link:nth-child(2) { animation-delay: 0.45s; }
+        .btn-link:nth-child(1) { animation-delay: 0.2s; }
+        .btn-link:nth-child(2) { animation-delay: 0.4s; }
         .btn-link:nth-child(3) { animation-delay: 0.6s; }
 
-        /* تأثيرات الضغط واللمس المريحة */
+        /* تأثير التوهج عند الضغط */
         .btn-link:active {
-            transform: scale(0.97);
+            transform: scale(0.96);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
-        .btn-link i {
-            font-size: 20px;
+        /* تخصيص الأيقونات */
+        .btn-link i.brand-icon {
+            font-size: 22px;
+            width: 30px;
+            text-align: center;
         }
+
+        /* ألوان الأيقونات بتدرجات هادئة تتناسب مع الفخامة */
+        .whatsapp i.brand-icon { color: #25d366; text-shadow: 0 0 10px rgba(37, 211, 102, 0.4); }
+        .snapchat i.brand-icon { color: #fffc00; text-shadow: 0 0 10px rgba(255, 252, 0, 0.4); }
+        .instagram i.brand-icon { color: #e1306c; text-shadow: 0 0 10px rgba(225, 48, 108, 0.4); }
 
         .btn-link .arrow-icon {
-            font-size: 14px;
-            opacity: 0.7;
+            font-size: 12px;
+            color: #d4af37;
             transition: transform 0.3s ease;
         }
 
-        .btn-link:hover .arrow-icon {
-            transform: translateX(-5px);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        /* الهويات اللونية لشبكات التواصل بلمسة متناسقة */
-        .whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #1cbd55 100%);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.2);
-        }
-
-        .snapchat {
-            background: linear-gradient(135deg, #fffc00 0%, #f1ee00 100%);
-            color: #111;
-            box-shadow: 0 6px 20px rgba(255, 252, 0, 0.2);
-        }
-
-        .instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.2);
-        }
-
-        /* قواعد حركات الـ CSS (Animations) */
-        @keyframes mainFadeIn {
+        @keyframes slideUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes btnSlideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulseEffect {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.15); opacity: 0; }
         }
     </style>
 </head>
@@ -177,35 +152,30 @@
     <div class="wrapper">
         <div class="profile-card">
             
-            <!-- الشعار المؤقت (سيتم تبديله بشعاره) -->
+            <!-- صورة واضحة وعالية الدقة تناسب الأعراس -->
             <div class="avatar-container">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=300" alt="مناسبات وأعراس">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400" alt="مناسبات وأعراس">
             </div>
 
-            <!-- النصوص والعبارات التعريفية -->
             <h1>لتنظيم الفعاليات والمناسبات</h1>
-            <p>وصيفة عروس، تنظيم أهل العريس، تصوير جوال احترافي وتغطية شاملة لكل حفلاتكم ومناسباتكم السعيدة في مكة وجدة.</p>
+            <p>وصيفة عروس، تنظيم أهل العريس، تصوير جوال احترافي وتغطية شاملة لكل حفلاتكم ومناسباتكم السعيدة في مكة وجدة برقي واحترافية.</p>
 
-            <!-- روابط التواصل الاجتماعي السريعة وحركاتها السلسة -->
             <div class="links-container">
                 
-                <!-- رابط الواتساب -->
-                <a href="https://wa.me/حساب_الواتساب" class="btn-link whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
+                <a href="#" class="btn-link whatsapp">
+                    <i class="fab fa-whatsapp brand-icon"></i>
                     <span>تواصل معنا عبر الواتساب</span>
                     <i class="fas fa-chevron-left arrow-icon"></i>
                 </a>
                 
-                <!-- رابط سناب شات -->
-                <a href="https://snapchat.com/add/حساب_السناب" class="btn-link snapchat" target="_blank">
-                    <i class="fab fa-snapchat"></i>
+                <a href="#" class="btn-link snapchat">
+                    <i class="fab fa-snapchat brand-icon"></i>
                     <span>تابعنا على سناب شات</span>
                     <i class="fas fa-chevron-left arrow-icon"></i>
                 </a>
                 
-                <!-- رابط إنستغرام -->
-                <a href="https://instagram.com/حساب_إنستغرام" class="btn-link instagram" target="_blank">
-                    <i class="fab fa-instagram"></i>
+                <a href="#" class="btn-link instagram">
+                    <i class="fab fa-instagram brand-icon"></i>
                     <span>شاهد أعمالنا على إنستغرام</span>
                     <i class="fas fa-chevron-left arrow-icon"></i>
                 </a>
