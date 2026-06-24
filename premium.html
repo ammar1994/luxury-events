@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فخامة المناسبات الفاخرة - التصميم البديل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&display=swap">
+    <style>
+        /* الهوية البصرية الجديدة - Luxury Events New Identity */
+        :root {
+            --bg-dark: #0B0B0C;
+            --bg-card: rgba(22, 22, 26, 0.65);
+            --accent-gold-light: #E7C8A0;
+            --accent-gold-main: #C5A059;
+            --accent-gold-dark: #93733A;
+            --text-primary: #F5F5F7;
+            --text-muted: #9A9A9A;
+            --card-border: rgba(197, 160, 89, 0.18);
+            --glow-effect: cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            font-family: 'Cairo', sans-serif;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 16px;
+            background-image: radial-gradient(circle at 50% 40%, #1A1712 0%, var(--bg-dark) 70%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .profile-area {
+            margin-bottom: 28px;
+        }
+
+        .profile-avatar {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-gold-main);
+            padding: 4px;
+            background: var(--bg-dark);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 15px rgba(197, 160, 89, 0.15);
+            object-fit: cover;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-bio {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 36px;
+            padding: 0 20px;
+            font-weight: 400;
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.4s var(--glow-effect);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-btn span {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .link-btn i {
+            font-size: 18px;
+            color: var(--accent-gold-main);
+        }
+
+        .link-btn .arrow-icon {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .link-btn:active {
+            transform: scale(0.98);
+            background: rgba(197, 160, 89, 0.08);
+            border-color: var(--accent-gold-main);
+            box-shadow: 0 0 12px rgba(197, 160, 89, 0.25);
+        }
+
+        .link-btn.featured {
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            background: linear-gradient(135deg, rgba(30, 26, 18, 0.8) 0%, rgba(15, 13, 9, 0.8) 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-area">
+            <!-- يمكنك استبدال الصورة بشعار العميل لاحقاً -->
+            <img class="profile-avatar" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=100" alt="Logo">
+        </div>
+
+        <h1 class="brand-name">لتنظيم المناسبات الفاخرة</h1>
+        <p class="brand-bio">تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات</p>
+
+        <div class="links-wrapper">
+            <!-- زر الواتساب كـ Call to action متميز -->
+            <a href="#" class="link-btn featured" target="_blank">
+                <span>
+                    <i class="fab fa-whatsapp"></i>
+                    احجز مناسبتك الآن
+                </span>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- زر إنستغرام -->
+            <a href="#" class="link-btn" target="_blank">
+                <span>
+                    <i class="fab fa-instagram"></i>
+                    معرض أعمالنا الفاخرة
+                </span>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- زر سناب شات -->
+            <a href="#" class="link-btn" target="_blank">
+                <span>
+                    <i class="fab fa-snapchat"></i>
+                    تابع كواليس الحفلات
+                </span>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
