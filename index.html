@@ -47,14 +47,14 @@
             padding: 45px 25px;
             border-radius: 35px;
             border: 1px solid rgba(255, 215, 0, 0.15);
-            border-top: 1px solid rgba(255, 215, 0, 0.4); /* إضاءة علوية */
+            border-top: 1px solid rgba(255, 215, 0, 0.4); 
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 15px rgba(255, 215, 0, 0.05);
             animation: cardEntrance 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
             opacity: 0;
             transform: translateY(30px);
         }
 
-        /* تأثير طفو للصورة مع حلقات ذهبية متداخلة */
+        /* تأثير طفو للصورة مع حلقات ذهبية متداخلة ناعمة الإضاءة */
         .avatar-wrapper {
             position: relative;
             width: 130px;
@@ -66,17 +66,16 @@
         .avatar-wrapper::before, .avatar-wrapper::after {
             content: '';
             position: absolute;
-            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            top: -3px; left: -3px; right: -3px; bottom: -3px;
             border-radius: 50%;
             background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             z-index: -1;
             animation: spin 8s linear infinite;
-            opacity: 0.7;
         }
 
         .avatar-wrapper::after {
-            filter: blur(15px);
-            opacity: 0.5;
+            filter: blur(12px);
+            opacity: 0.4;
         }
 
         .avatar-wrapper img {
@@ -85,35 +84,37 @@
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #111;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* نصوص معدنية بليغة */
+        /* تدرج الذهب المعدني الاحترافي */
+        .gold-text {
+            background: linear-gradient(to right, #bf953f 0%, #fcf6ba 30%, #b38728 70%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
         .premium-card h1 {
             font-size: 26px;
             font-weight: 800;
             margin-bottom: 15px;
-            /* تأثير الذهب المعدني على النص */
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             letter-spacing: 1px;
         }
 
+        /* رفع التباين ليصبح مقروءاً بوضوح تالي */
         .premium-card p {
             font-size: 14.5px;
-            color: #a09e9a;
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.8;
             margin-bottom: 40px;
             font-weight: 300;
         }
 
         .highlight-text {
-            color: #d4af37;
-            font-weight: 400;
+            font-weight: 700;
         }
 
-        /* أزرار فاخرة مع تأثير لمعان متحرك */
+        /* أزرار فاخرة موحدة الألوان */
         .links-container {
             display: flex;
             flex-direction: column;
@@ -131,7 +132,7 @@
             font-size: 16px;
             font-weight: 600;
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.25);
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -144,13 +145,13 @@
         .luxury-btn:nth-child(2) { animation-delay: 0.5s; }
         .luxury-btn:nth-child(3) { animation-delay: 0.7s; }
 
-        /* تأثير اللمعة التي تمر فوق الزر */
+        /* تأثير اللمعة المارة */
         .luxury-btn::before {
             content: '';
             position: absolute;
             top: 0; left: -100%;
             width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.08), transparent);
             transform: skewX(-25deg);
             animation: shineSweep 4s infinite;
         }
@@ -161,30 +162,26 @@
             border-color: #d4af37;
         }
 
-        /* أيقونات ملونة بطريقة هادئة وراقية */
+        /* توحيد الأيقونات باللون الذهبي المعدني الفخم */
         .luxury-btn i.brand-icon {
             font-size: 24px;
             width: 35px;
             text-align: center;
-        }
-
-        .whatsapp i.brand-icon { color: #25d366; }
-        .snapchat i.brand-icon { color: #fffc00; }
-        .instagram i.brand-icon { 
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* تعديل وزن وبريق السهم الأيسر ليصبح متناسقاً */
         .luxury-btn .arrow-icon {
-            font-size: 13px;
-            color: rgba(212, 175, 55, 0.6);
-            transition: transform 0.3s ease, color 0.3s ease;
+            font-size: 14px;
+            font-weight: 900;
+            color: #d4af37;
+            transition: transform 0.3s ease;
         }
 
         .luxury-btn:hover .arrow-icon {
             transform: translateX(-5px);
-            color: #d4af37;
         }
 
         /* Animations */
@@ -222,25 +219,24 @@
                 <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=400" alt="مناسبات وأعراس فاخرة">
             </div>
 
-            <!-- تم تحسين النص ليكون تسويقياً ونفسياً يعكس الفخامة -->
-            <h1>نصنع ذكريات خالدة</h1>
-            <p>تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات في مكة وجدة. <br> <span class="highlight-text">(وصيفة عروس، تنظيم أهل العريس، وتوثيق سينمائي)</span></p>
+            <h1 class="gold-text">نصنع ذكريات خالدة</h1>
+            <p>تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات في مكة وجدة. <br> <span class="highlight-text gold-text">(وصيفة عروس، تنظيم أهل العريس، وتوثيق سينمائي)</span></p>
 
             <div class="links-container">
                 
-                <a href="#" class="luxury-btn whatsapp">
+                <a href="#" class="luxury-btn">
                     <i class="fab fa-whatsapp brand-icon"></i>
-                    <span>تواصل معنا للحجز</span>
+                    <span>تواصل معنا للحجز والاستفسار</span>
                     <i class="fas fa-chevron-left arrow-icon"></i>
                 </a>
                 
-                <a href="#" class="luxury-btn snapchat">
+                <a href="#" class="luxury-btn">
                     <i class="fab fa-snapchat brand-icon"></i>
-                    <span>كواليسنا على سناب شات</span>
+                    <span>كواليسنا الفاخرة على سناب شات</span>
                     <i class="fas fa-chevron-left arrow-icon"></i>
                 </a>
                 
-                <a href="#" class="luxury-btn instagram">
+                <a href="#" class="luxury-btn">
                     <i class="fab fa-instagram brand-icon"></i>
                     <span>معرض أعمالنا الملكي</span>
                     <i class="fas fa-chevron-left arrow-icon"></i>
