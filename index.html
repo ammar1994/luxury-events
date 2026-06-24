@@ -32,7 +32,7 @@
 
         .wrapper {
             width: 100%;
-            max-width: 410px;
+            max-width: 430px;
             text-align: center;
             z-index: 10;
         }
@@ -41,7 +41,7 @@
             background: linear-gradient(145deg, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 40px 20px;
+            padding: 40px 24px;
             border-radius: 32px;
             border: 1px solid rgba(255, 215, 0, 0.15);
             border-top: 1px solid rgba(255, 215, 0, 0.35); 
@@ -90,23 +90,25 @@
         }
 
         .premium-card h1 {
-            font-size: 25px;
+            font-size: 26px;
             font-weight: 800;
             margin-bottom: 15px;
             letter-spacing: 0.5px;
         }
 
         .premium-card p {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.85);
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.8;
             margin-bottom: 35px;
             font-weight: 300;
-            padding: 0 5px;
+            padding: 0 10px;
         }
 
         .highlight-text {
             font-weight: 700;
+            display: block;
+            margin-top: 5px;
         }
 
         .links-container {
@@ -120,16 +122,16 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 16px 18px;
+            padding: 18px 20px;
             text-decoration: none;
             color: #e5e5e5;
-            font-size: 14.5px; /* تصغير طفيف لضمان ثبات السطر */
+            font-size: 15px;
             font-weight: 600;
             background: rgba(255, 255, 255, 0.01);
             border: 1px solid rgba(212, 175, 55, 0.22);
             border-radius: 14px;
             overflow: hidden;
-            white-space: nowrap; /* يمنع انكسار النص نهائياً */
+            white-space: nowrap;
             transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
             opacity: 0;
             transform: translateX(-20px);
@@ -182,14 +184,13 @@
             transform: translateX(-3px);
         }
 
-        /* الاستعلامات المرنة لضمان التوافق مع الشاشات البالغة الصغر */
-        @media (max-width: 360px) {
+        @media (max-width: 380px) {
             .luxury-btn {
-                font-size: 13px;
-                padding: 14px 12px;
+                font-size: 13.5px;
+                padding: 16px 14px;
             }
-            .premium-card h1 {
-                font-size: 22px;
+            .premium-card p {
+                font-size: 12.5px;
             }
         }
 
@@ -228,7 +229,7 @@
             </div>
 
             <h1 class="gold-text">نصنع ذكريات خالدة</h1>
-            <p>تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات في مكة وجدة. <br> <span class="highlight-text gold-text">(وصيفة عروس، تنظيم أهل العريس، وتوثيق سينمائي)</span></p>
+            <p>تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات في مكة وجدة. <span class="highlight-text gold-text">(وصيفة عروس، تنظيم أهل العريس، وتوثيق سينمائي)</span></p>
 
             <div class="links-container">
                 
