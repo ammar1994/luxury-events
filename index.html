@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بشير للمناسبات الفاخرة</title>
+    <title>لتنظيم المناسبات الفاخرة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;800&display=swap">
     
@@ -25,7 +25,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 15px;
+            padding: 20px 15px;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -41,7 +41,7 @@
             background: linear-gradient(145deg, rgba(20, 20, 20, 0.95), rgba(5, 5, 5, 0.98));
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            padding: 40px 24px;
+            padding: 45px 25px; /* تم زيادة المساحات الداخلية للتنفس البصري */
             border-radius: 32px;
             border: 1px solid rgba(255, 215, 0, 0.15);
             border-top: 1px solid rgba(255, 215, 0, 0.35); 
@@ -53,9 +53,9 @@
 
         .avatar-wrapper {
             position: relative;
-            width: 125px;
-            height: 125px;
-            margin: 0 auto 25px;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 30px;
             animation: floating 4s ease-in-out infinite;
         }
 
@@ -96,19 +96,26 @@
             letter-spacing: 0.5px;
         }
 
-        .premium-card p {
-            font-size: 13.5px;
-            color: rgba(255, 255, 255, 0.8);
+        /* حاوية النص الوصفي لمنع التشوه */
+        .desc-box {
+            max-width: 100%;
+            margin: 0 auto 35px;
             line-height: 1.8;
-            margin-bottom: 35px;
-            font-weight: 300;
             padding: 0 10px;
         }
 
-        .highlight-text {
+        .desc-box p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            margin-bottom: 8px; 
+        }
+
+        .desc-box .highlight-text {
+            font-size: 13.5px; 
             font-weight: 700;
-            display: block;
-            margin-top: 5px;
+            display: inline-block;
+            line-height: 1.6;
         }
 
         .links-container {
@@ -117,11 +124,12 @@
             gap: 16px;
         }
 
+        /* هندسة الأزرار والتوسيط المطلق */
         .luxury-btn {
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* توسيط رياضي للنص */
             padding: 18px 20px;
             text-decoration: none;
             color: #e5e5e5;
@@ -158,22 +166,23 @@
             border-color: #d4af37;
         }
 
+        /* تثبيت الأيقونات على الأطراف بمسافات متطابقة */
         .luxury-btn i.brand-icon {
+            position: absolute;
+            right: 20px;
             font-size: 22px;
-            width: 30px;
-            text-align: center;
             background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .luxury-btn span {
-            flex: 1;
-            text-align: right;
-            padding-right: 12px;
+            text-align: center;
         }
 
         .luxury-btn .arrow-icon {
+            position: absolute;
+            left: 20px;
             font-size: 13px;
             font-weight: 900;
             color: rgba(212, 175, 55, 0.8);
@@ -184,12 +193,22 @@
             transform: translateX(-3px);
         }
 
+        /* قواعد استجابة الشاشات الصغيرة */
         @media (max-width: 380px) {
             .luxury-btn {
                 font-size: 13.5px;
                 padding: 16px 14px;
             }
-            .premium-card p {
+            .luxury-btn i.brand-icon {
+                right: 15px;
+            }
+            .luxury-btn .arrow-icon {
+                left: 15px;
+            }
+            .desc-box p {
+                font-size: 13px;
+            }
+            .desc-box .highlight-text {
                 font-size: 12.5px;
             }
         }
@@ -229,7 +248,11 @@
             </div>
 
             <h1 class="gold-text">نصنع ذكريات خالدة</h1>
-            <p>تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات في مكة وجدة. <span class="highlight-text gold-text">(وصيفة عروس، تنظيم أهل العريس، وتوثيق سينمائي)</span></p>
+            
+            <div class="desc-box">
+                <p>تفاصيل استثنائية ولمسات ملكية لتنظيم أفخم الأعراس والمناسبات في مكة وجدة.</p>
+                <span class="highlight-text gold-text">(وصيفة عروس، تنظيم أهل العريس، وتوثيق سينمائي)</span>
+            </div>
 
             <div class="links-container">
                 
